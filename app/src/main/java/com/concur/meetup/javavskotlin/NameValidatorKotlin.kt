@@ -44,5 +44,5 @@ fun validateUsers(context: Context) {
 
     NameUtilsKotlin.showLogic(null, context)
     NameUtilsKotlin.showLogic("Honza", context)
-    //showChained("Honza", context);
+    NameUtilsKotlin.showChained("Honza", context);
 }

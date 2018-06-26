@@ -50,7 +50,7 @@ public class NameUtilsJava {
 
         showLogic(null, context);
         showLogic("Honza", context);
-        //showCustomize("Honza", context);
+        showCustomize("Honza", context);
     }
 
 
