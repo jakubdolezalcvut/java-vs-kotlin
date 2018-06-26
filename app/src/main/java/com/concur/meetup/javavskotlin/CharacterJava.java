@@ -1,16 +1,18 @@
 package com.concur.meetup.javavskotlin;
 
 import android.util.Log;
-import java.util.Locale;
+
 import java.util.Objects;
 
-public class UserJava {
+public class CharacterJava {
 
     private String firstName;
     private String lastName;
     private int birthYear;
 
-    public UserJava(final String firstName, final String lastName, final int birthYear) {
+    public CharacterJava() { }
+
+    public CharacterJava(final String firstName, final String lastName, final int birthYear) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthYear = birthYear;
@@ -42,7 +44,7 @@ public class UserJava {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("UserJava{");
+        final StringBuilder sb = new StringBuilder("CharacterJava{");
         sb.append("firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", birthYear=").append(birthYear);
@@ -54,11 +56,11 @@ public class UserJava {
     public boolean equals(final Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        final UserJava userJava = (UserJava) o;
+        final CharacterJava characterJava = (CharacterJava) o;
 
-        return birthYear == userJava.birthYear &&
-                Objects.equals(firstName, userJava.firstName) &&
-                Objects.equals(lastName, userJava.lastName);
+        return birthYear == characterJava.birthYear &&
+                Objects.equals(firstName, characterJava.firstName) &&
+                Objects.equals(lastName, characterJava.lastName);
     }
 
     @Override
@@ -68,29 +70,29 @@ public class UserJava {
 
     public static class Example {
 
-        private static final String TAG = "UserJava";
+        private static final String TAG = "CharacterJava";
 
         // This code is actually supposed to be called from another class.
-        public static void createUsers() {
-            UserJava user1 = new UserJava("Bilbo", "Baggins", 2890);
+        public static void createPersons() {
+            CharacterJava bilbo = new CharacterJava("Bilbo", "Baggins", 2890);
 
-            int born = user1.getBirthYear();
-            String businessCard = user1.getFirstName() + " " + user1.getLastName() + ", born " + user1.getBirthYear();
-            //String businessCard = String.format(Locale.US, "%s %s, born %d", user1.getFirstName(), user1.getLastName(), user1.getBirthYear());
+            int born = bilbo.getBirthYear();
+            String businessCard = bilbo.getFirstName() + " " + bilbo.getLastName() + ", born " + bilbo.getBirthYear();
+            //String businessCard = String.format(Locale.US, "%s %s, born %d", bilbo.getFirstName(), bilbo.getLastName(), bilbo.getBirthYear());
             Log.i(TAG, "born: " + born);
             Log.i(TAG, "businessCard: " + businessCard);
 
-            UserJava user2 = new UserJava(null, "Sauron", 0);
-            user2.setLastName("Melkor");
+            CharacterJava sauron = new CharacterJava(null, "Sauron", 0);
+            sauron.setLastName("Melkor");
 
-            int hashCode = user2.hashCode();
+            int hashCode = sauron.hashCode();
             Log.i(TAG, "Hashcode: " + hashCode);
-            Log.i(TAG, "toString: " + user2);
+            Log.i(TAG, "toString: " + sauron);
 
-            UserJava user3 = new UserJava(null, "Melkor", 0);
-            boolean naiveEqual = user2 == user3;
-            boolean realEqual = user2.equals(user3);
-            Log.i(TAG, "user2 and user3 are equal: naively '" + naiveEqual + "' really '" + realEqual + "'");
+            CharacterJava melkor = new CharacterJava(null, "Melkor", 0);
+            boolean naiveEqual = sauron == melkor;
+            boolean realEqual = sauron.equals(melkor);
+            Log.i(TAG, "sauron and melkor are equal: naively '" + naiveEqual + "' really '" + realEqual + "'");
         }
 
         private Example() { }

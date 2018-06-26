@@ -13,10 +13,12 @@ class SimpleActivityKotlin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_simple)
-        setSupportActionBar(request_toolbar)
+        setSupportActionBar(simple_toolbar)
 
-        request_toolbar.setNavigationOnClickListener({
+        simple_toolbar.setNavigationOnClickListener({
             Log.i(TAG, "Navigation clicked.")
         })
+
+        simple_text.text = "Kotlin Activity"
     }
 }

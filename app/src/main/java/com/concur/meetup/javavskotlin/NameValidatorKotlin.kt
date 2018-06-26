@@ -14,7 +14,7 @@ object NameUtilsKotlin {
 
     fun isNameValid(name: String?): Boolean {
         val length = name?.length ?: 0
-        return (length >= 8)
+        return (length >= 5)
     }
 
     fun showLogic(name: String?, context: Context) {

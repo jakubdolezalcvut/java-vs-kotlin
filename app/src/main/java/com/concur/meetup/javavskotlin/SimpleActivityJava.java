@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class SimpleActivityJava extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class SimpleActivityJava extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple);
 
-        Toolbar toolbar = findViewById(R.id.request_toolbar);
+        Toolbar toolbar = findViewById(R.id.simple_toolbar);
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -23,5 +24,8 @@ public class SimpleActivityJava extends AppCompatActivity {
                 Log.i(TAG, "Navigation clicked.");
             }
         });
+
+        TextView textView = findViewById(R.id.simple_text);
+        textView.setText("Java Activity");
     }
 }

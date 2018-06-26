@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     // Reducing Boilerplate
     private fun exampleTwo() {
         // Java:
-        UserJava.Example.createUsers()
+        CharacterJava.Example.createPersons()
 
         // Kotlin:
         createUsers()
